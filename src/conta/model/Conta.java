@@ -1,6 +1,7 @@
 package conta.model;
 
-public class Conta {
+//Classe abstrata => base para criar outras classes
+public abstract class Conta {
 
 	// Atributos
 	private int numero; // 0
@@ -10,15 +11,14 @@ public class Conta {
 	private float saldo;// 50f
 
 	/*
-	 * 3 modificadores de acesso / celular particular Private somente a classe
-	 * acessa as informações Protected somente classes dentro do paconte acessa
-	 * informações / telefone de casa Public qualquer classe acessa / orelhão
+	 * 3 modificadores de acesso / Private somente a classe acessa as informações -
+	 * celular particular / Protected somente classes dentro do paconte acessa
+	 * informações - telefone de casa / Public qualquer classe acessa - orelhão
 	 * Default
 	 */
 
 	// Metodo Especial - Metodo Construtor
 	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
-
 		// this => Classe Conta
 		// Conta.numero = atributo
 		// Numero = 6
@@ -85,21 +85,22 @@ public class Conta {
 
 	public void depositar(float valor) {
 		this.setSaldo(this.getSaldo() + valor);
-		
+
 	}
+
+	
 	public void visualizar() {
-		
 		String tipo = "";
-		
-		switch(this.tipo) {
+
+		switch (this.tipo) {
 		case 1:
 			tipo = "Conta Corrente";
 			break;
-		case 2: 
+		case 2:
 			tipo = "Conta Poupança";
 			break;
 		}
-		
+
 		System.out.println("\n\n*******************************************");
 		System.out.println("Dados da Conta: ");
 		System.out.println("***********************************************");
@@ -108,11 +109,9 @@ public class Conta {
 		System.out.println("Tipo da Conta: " + tipo);
 		System.out.println("Titular: " + this.titular);
 		System.out.println("Saldo: " + this.saldo);
-		
-		
-		
-		}
+
 	}
+}
 
 // Métodos/Comportamentos
 // Metodos de acesso
